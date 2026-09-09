@@ -1,0 +1,340 @@
+/* ==============================================================
+   COMMON STYLES & SPA LOGIC
+   ============================================================== */
+:root {
+    --primary-color: #0F4C3A; /* Dark Green from UI */
+    --primary-light: #186b52;
+    --accent-gold: #D4AF37;
+    
+    --bg-body: #F4F6F8;
+    --bg-white: #FFFFFF;
+    
+    --text-main: #333333;
+    --text-muted: #6B7280;
+    
+    --color-green: #10B981;
+    --color-blue: #3B82F6;
+    --color-orange: #F59E0B;
+    --color-red: #EF4444;
+    
+    --border-color: #E5E7EB;
+    
+    --font-family: 'Inter', sans-serif;
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-body);
+    color: var(--text-main);
+}
+
+/* SPA View Logic: Hide all views by default */
+.view {
+    display: none;
+}
+
+/* Only display the active view */
+.view.active {
+    display: flex;
+}
+
+/* ==============================================================
+   ADMIN DASHBOARD STYLES (Screen 8)
+   ============================================================== */
+
+/* Layout */
+.admin-layout {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-brand {
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand-logo {
+    color: var(--accent-gold);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.brand-text h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    margin-bottom: 0.2rem;
+}
+
+.brand-text h2 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+    letter-spacing: 1px;
+}
+
+.brand-text p {
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: #A7F3D0;
+    margin-top: 0.3rem;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.875rem 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.nav-item i {
+    width: 20px;
+    text-align: center;
+    color: var(--accent-gold);
+}
+
+.nav-item.logout {
+    margin-top: auto;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+/* Header */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.page-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.date-display {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Stat Cards Grid */
+.stat-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: var(--bg-white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.icon-green { background: #D1FAE5; color: var(--color-green); }
+.icon-blue { background: #DBEAFE; color: var(--color-blue); }
+.icon-orange { background: #FEF3C7; color: var(--color-orange); }
+.icon-red { background: #FEE2E2; color: var(--color-red); }
+
+.stat-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.text-green { color: var(--color-green); }
+.text-blue { color: var(--color-blue); }
+.text-orange { color: var(--color-orange); }
+.text-red { color: var(--color-red); }
+
+/* Common Card Style */
+.card {
+    background: var(--bg-white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.filter-dropdown {
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-white);
+    color: var(--text-main);
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+/* Charts Section */
+.charts-section {
+    margin-bottom: 2rem;
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* Bottom Grid */
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/* Top Items List */
+.top-items-list {
+    list-style: none;
+}
+
+.top-items-list li {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.top-items-list li:last-child {
+    border-bottom: none;
+}
+
+.item-rank {
+    width: 24px;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.item-name {
+    flex: 1;
+    font-weight: 500;
+}
+
+.item-count {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* Order Status Pie Chart area */
+.order-status-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.status-legend {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.status-legend li {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.status-legend .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.status-legend .count {
+    margin-left: auto;
+    font-weight: 600;
+    color: var(--text-main);
+    padding-left: 1rem;
+}
