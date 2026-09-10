@@ -52,7 +52,81 @@ body {
 /* Layout */
 .admin-layout {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Header */
+.app-top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    height: 70px;
+    background-color: var(--primary-color);
+    border-bottom: 3px solid var(--color-red);
+    z-index: 10;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-brand i {
+    font-size: 1.8rem;
+    color: var(--accent-gold);
+}
+
+.header-brand h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.header-profile {
+    display: flex;
+    align-items: center;
+}
+
+.restaurant-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+}
+
+.restaurant-profile img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-gold);
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+}
+
+.profile-role {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* App Body */
+.app-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
 }
 
 /* Sidebar */
@@ -64,51 +138,13 @@ body {
     flex-direction: column;
 }
 
-.sidebar-brand {
-    padding: 2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    height: 170px;
-    justify-content: center;
-    border-bottom: 3px solid var(--color-red);
-}
-
-.brand-logo {
-    color: var(--accent-gold);
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.brand-text h1 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--accent-gold);
-    margin-bottom: 0.2rem;
-}
-
-.brand-text h2 {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--accent-gold);
-    letter-spacing: 1px;
-}
-
-.brand-text p {
-    font-size: 0.7rem;
-    font-weight: 400;
-    letter-spacing: 3px;
-    color: #A7F3D0;
-    margin-top: 0.3rem;
-}
-
 .sidebar-nav {
     display: flex;
     flex-direction: column;
     padding: 1.5rem 1rem;
     gap: 0.5rem;
     flex: 1;
+    overflow-y: auto;
 }
 
 .nav-item {
@@ -142,13 +178,9 @@ body {
 /* Main Content */
 .main-content {
     flex: 1;
-    padding: 0;
+    padding: 2rem;
     overflow-y: auto;
-}
-
-/* Sections padding */
-.stat-cards-grid, .charts-section, .bottom-grid {
-    padding: 0 2rem;
+    background-color: var(--bg-body);
 }
 
 /* Header */
@@ -156,9 +188,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
-    height: 170px;
-    border-bottom: 3px solid var(--color-red);
     margin-bottom: 2rem;
 }
 

@@ -21,52 +21,63 @@
         <!-- ========================================== -->
         <div id="view-admin-dashboard" class="view active admin-layout">
             
-            <!-- Sidebar -->
-            <aside class="sidebar">
-                <div class="sidebar-brand">
+            <!-- Top Header -->
+            <header class="app-top-header">
+                <div class="header-brand">
                     <div class="brand-logo">
                         <i class="fa-solid fa-mosque"></i>
                     </div>
                     <div class="brand-text">
-                        <h1>BISMILLAH</h1>
-                        <h2>PAK DARBAR</h2>
-                        <p>RESTAURANT</p>
+                        <h1>BISMILLAH PAK DARBAR</h1>
                     </div>
                 </div>
+                <div class="header-profile">
+                    <div class="restaurant-profile">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=0F4C3A&color=fff" alt="Profile" class="profile-img">
+                        <div class="profile-info">
+                            <span class="profile-name">Restaurant Admin</span>
+                            <span class="profile-role">Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
 
-                <nav class="sidebar-nav">
-                    <a href="#" class="nav-item active" onclick="switchView('view-admin-dashboard')">
-                        <i class="fa-solid fa-gauge"></i> Dashboard
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-receipt"></i> Orders
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-utensils"></i> Menu
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-qrcode"></i> Tables & QR
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-users"></i> Staff
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-credit-card"></i> Payments
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-chart-line"></i> Reports
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-gear"></i> Settings
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-clock-rotate-left"></i> Activity Logs
-                    </a>
-                    <a href="#" class="nav-item logout">
-                        <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
-                    </a>
-                </nav>
-            </aside>
+            <div class="app-body">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <nav class="sidebar-nav">
+                        <a href="#" class="nav-item active" onclick="switchView('view-admin-dashboard')">
+                            <i class="fa-solid fa-gauge"></i> Dashboard
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-receipt"></i> Orders
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-utensils"></i> Menu
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-qrcode"></i> Tables & QR
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-users"></i> Staff
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-credit-card"></i> Payments
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-chart-line"></i> Reports
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-gear"></i> Settings
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-clock-rotate-left"></i> Activity Logs
+                        </a>
+                        <a href="#" class="nav-item logout">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+                        </a>
+                    </nav>
+                </aside>
 
             <!-- Main Content -->
             <main class="main-content">
@@ -172,6 +183,7 @@
                     </div>
                 </div>
             </main>
+            </div>
         </div>
 
         <!-- Future views will be added here (e.g., view-customer-menu, view-kitchen) -->
