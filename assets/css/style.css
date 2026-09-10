@@ -64,8 +64,8 @@ body {
     align-items: center;
     padding: 0 1.5rem;
     height: 70px;
-    background-color: var(--primary-color);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: var(--bg-white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     z-index: 10;
 }
 
@@ -83,7 +83,7 @@ body {
 .header-brand h1 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: white;
+    color: var(--primary-color);
     letter-spacing: 1px;
 }
 
@@ -114,12 +114,12 @@ body {
 .profile-name {
     font-size: 0.9rem;
     font-weight: 600;
-    color: white;
+    color: var(--text-main);
 }
 
 .profile-role {
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--text-muted);
 }
 
 /* App Body */
@@ -132,8 +132,9 @@ body {
 /* Sidebar */
 .sidebar {
     width: 260px;
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--bg-white);
+    color: var(--text-main);
+    border-right: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
 }
@@ -152,7 +153,7 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 0.6rem 1rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-muted);
     text-decoration: none;
     border-radius: 8px;
     font-size: 0.95rem;
@@ -161,14 +162,14 @@ body {
 }
 
 .nav-item:hover, .nav-item.active {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
+    background-color: var(--bg-body);
+    color: var(--primary-color);
 }
 
 .nav-item i {
     width: 20px;
     text-align: center;
-    color: var(--accent-gold);
+    color: inherit;
 }
 
 .nav-item.logout {
