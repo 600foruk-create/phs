@@ -70,7 +70,9 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    height: 170px;
+    justify-content: center;
+    border-bottom: 3px solid var(--color-red);
 }
 
 .brand-logo {
@@ -140,8 +142,13 @@ body {
 /* Main Content */
 .main-content {
     flex: 1;
-    padding: 2rem;
+    padding: 0;
     overflow-y: auto;
+}
+
+/* Sections padding */
+.stat-cards-grid, .charts-section, .bottom-grid {
+    padding: 0 2rem;
 }
 
 /* Header */
@@ -149,6 +156,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 2rem;
+    height: 170px;
+    border-bottom: 3px solid var(--color-red);
     margin-bottom: 2rem;
 }
 
