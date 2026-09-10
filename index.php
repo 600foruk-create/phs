@@ -21,57 +21,70 @@
         <!-- ========================================== -->
         <div id="view-admin-dashboard" class="view active admin-layout">
             
-            <!-- Sidebar -->
-            <aside class="sidebar">
-                <div class="sidebar-brand">
+            <!-- Overall Top Header -->
+            <header class="app-top-header">
+                <div class="header-brand">
                     <div class="brand-logo">
                         <i class="fa-solid fa-mosque"></i>
                     </div>
                     <div class="brand-text">
-                        <h1>BISMILLAH</h1>
-                        <h2>PAK DARBAR</h2>
-                        <p>RESTAURANT</p>
+                        <h1>BISMILLAH PAK DARBAR</h1>
                     </div>
                 </div>
+                <div class="header-profile">
+                    <div class="restaurant-profile">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=D4AF37&color=fff" alt="Profile" class="profile-img">
+                        <div class="profile-info">
+                            <span class="profile-name">Restaurant Admin</span>
+                            <span class="profile-role">Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
 
-                <nav class="sidebar-nav">
-                    <a href="#" class="nav-item active" onclick="switchView('view-admin-dashboard')">
-                        <i class="fa-solid fa-gauge"></i> Dashboard
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-receipt"></i> Orders
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-utensils"></i> Menu
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-qrcode"></i> Tables & QR
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-users"></i> Staff
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-credit-card"></i> Payments
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-chart-line"></i> Reports
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-gear"></i> Settings
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-clock-rotate-left"></i> Activity Logs
-                    </a>
-                    <a href="#" class="nav-item logout">
-                        <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
-                    </a>
-                </nav>
-            </aside>
-
-            <!-- Main Content -->
-            <main class="main-content">
+            <!-- App Body (Sidebar + Main Content) -->
+            <div class="app-body">
                 
-                <!-- Header -->
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <nav class="sidebar-nav">
+                        <a href="#" class="nav-item active" onclick="switchView('view-admin-dashboard')">
+                            <i class="fa-solid fa-gauge"></i> Dashboard
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-receipt"></i> Orders
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-utensils"></i> Menu
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-qrcode"></i> Tables & QR
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-users"></i> Staff
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-credit-card"></i> Payments
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-chart-line"></i> Reports
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-gear"></i> Settings
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fa-solid fa-clock-rotate-left"></i> Activity Logs
+                        </a>
+                        <a href="#" class="nav-item logout">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+                        </a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="main-content">
+                    
+                    <!-- Header -->
                 <header class="top-header">
                     <h2 class="page-title">Dashboard</h2>
                     <div class="date-display" id="current-date">
@@ -122,9 +135,11 @@
                     </div>
                 </div>
 
-                <!-- Charts Section -->
-                <div class="charts-section">
-                    <div class="card full-width">
+                <!-- Dashboard 3-Column Grid -->
+                <div class="dashboard-3-col-grid">
+                    
+                    <!-- Sales Overview -->
+                    <div class="card charts-section-card">
                         <div class="card-header">
                             <h3>Sales Overview</h3>
                             <select class="filter-dropdown">
@@ -136,10 +151,7 @@
                             <span style="color: #888;">[ Line Chart Placeholder ]</span>
                         </div>
                     </div>
-                </div>
 
-                <!-- Bottom Grid -->
-                <div class="bottom-grid">
                     <!-- Top Selling Items -->
                     <div class="card">
                         <div class="card-header">
@@ -160,7 +172,7 @@
                             <h3>Order Status</h3>
                         </div>
                         <div class="order-status-container">
-                            <div class="pie-chart-placeholder" style="width: 150px; height: 150px; border-radius: 50%; background: conic-gradient(#10b981 0% 40%, #3b82f6 40% 65%, #f59e0b 65% 85%, #6b7280 85% 100%);"></div>
+                            <div class="pie-chart-placeholder" style="width: 140px; height: 140px; border-radius: 50%; background: conic-gradient(#10b981 0% 40%, #3b82f6 40% 65%, #f59e0b 65% 85%, #6b7280 85% 100%);"></div>
                             <ul class="status-legend">
                                 <li><span class="dot" style="background: #3b82f6;"></span> Pending <span class="count">24</span></li>
                                 <li><span class="dot" style="background: #f59e0b;"></span> Preparing <span class="count">36</span></li>
@@ -170,8 +182,10 @@
                             </ul>
                         </div>
                     </div>
+
                 </div>
             </main>
+            </div> <!-- End App Body -->
         </div>
 
         <!-- Future views will be added here (e.g., view-customer-menu, view-kitchen) -->
