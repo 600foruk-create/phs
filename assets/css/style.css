@@ -52,92 +52,16 @@ body {
 /* Layout */
 .admin-layout {
     width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Overall Top Header */
-.app-top-header {
-    height: 70px;
-    background-color: var(--primary-color);
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1.5rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    z-index: 10;
-}
-
-.header-brand {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.header-brand .brand-logo {
-    color: var(--accent-gold);
-    font-size: 1.8rem;
-}
-
-.header-brand .brand-text h1 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--accent-gold);
-    letter-spacing: 1px;
-}
-
-.header-profile {
-    display: flex;
-    align-items: center;
-}
-
-.restaurant-profile {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    cursor: pointer;
-}
-
-.restaurant-profile .profile-img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--accent-gold);
-}
-
-.profile-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.profile-name {
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.profile-role {
-    font-size: 0.75rem;
-    color: #A7F3D0;
-}
-
-/* App Body containing sidebar and main content */
-.app-body {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
+    min-height: 100vh;
 }
 
 /* Sidebar */
 .sidebar {
-    width: 240px;
+    width: 260px;
     background-color: var(--primary-color);
     color: white;
     display: flex;
     flex-direction: column;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .sidebar-brand {
@@ -180,17 +104,16 @@ body {
 .sidebar-nav {
     display: flex;
     flex-direction: column;
-    padding: 1rem 0.75rem;
-    gap: 0.2rem;
+    padding: 1.5rem 1rem;
+    gap: 0.5rem;
     flex: 1;
-    overflow-y: auto;
 }
 
 .nav-item {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 0.65rem 1rem;
+    padding: 0.875rem 1rem;
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     border-radius: 8px;
@@ -328,16 +251,20 @@ body {
     cursor: pointer;
 }
 
-/* Dashboard 3-Col Grid */
-.dashboard-3-col-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 1.5rem;
+/* Charts Section */
+.charts-section {
     margin-bottom: 2rem;
 }
 
-.charts-section-card {
-    height: 100%;
+.full-width {
+    width: 100%;
+}
+
+/* Bottom Grid */
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
 }
 
 /* Top Items List */
