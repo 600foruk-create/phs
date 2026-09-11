@@ -24,6 +24,9 @@
             <!-- Top Header -->
             <header class="app-top-header">
                 <div class="header-brand">
+                    <button id="sidebar-toggle" class="sidebar-toggle-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
                     <div class="brand-logo">
                         <i class="fa-solid fa-mosque"></i>
                     </div>
@@ -47,34 +50,34 @@
                 <aside class="sidebar">
                     <nav class="sidebar-nav">
                         <a href="#" class="nav-item active" onclick="switchView('view-admin-dashboard')">
-                            <i class="fa-solid fa-gauge"></i> Dashboard
+                            <i class="fa-solid fa-gauge"></i> <span>Dashboard</span>
                         </a>
                         <a href="#" class="nav-item">
-                            <i class="fa-solid fa-receipt"></i> Orders
+                            <i class="fa-solid fa-receipt"></i> <span>Orders</span>
                         </a>
                         <a href="#" class="nav-item">
-                            <i class="fa-solid fa-utensils"></i> Menu
+                            <i class="fa-solid fa-utensils"></i> <span>Menu</span>
                         </a>
                         <a href="#" class="nav-item">
-                            <i class="fa-solid fa-qrcode"></i> Tables & QR
+                            <i class="fa-solid fa-qrcode"></i> <span>Tables & QR</span>
                         </a>
                         <a href="#" class="nav-item">
-                            <i class="fa-solid fa-users"></i> Staff
+                            <i class="fa-solid fa-users"></i> <span>Staff</span>
                         </a>
                         <a href="#" class="nav-item">
-                            <i class="fa-solid fa-credit-card"></i> Payments
+                            <i class="fa-solid fa-credit-card"></i> <span>Payments</span>
                         </a>
                         <a href="#" class="nav-item">
-                            <i class="fa-solid fa-chart-line"></i> Reports
+                            <i class="fa-solid fa-chart-line"></i> <span>Reports</span>
                         </a>
                         <a href="#" class="nav-item">
-                            <i class="fa-solid fa-gear"></i> Settings
+                            <i class="fa-solid fa-gear"></i> <span>Settings</span>
                         </a>
                         <a href="#" class="nav-item">
-                            <i class="fa-solid fa-clock-rotate-left"></i> Activity Logs
+                            <i class="fa-solid fa-clock-rotate-left"></i> <span>Activity Logs</span>
                         </a>
                         <a href="#" class="nav-item logout">
-                            <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span>
                         </a>
                     </nav>
                 </aside>

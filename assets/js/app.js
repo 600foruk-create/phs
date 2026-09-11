@@ -26,4 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const options = { day: 'numeric', month: 'short', year: 'numeric' };
         dateDisplay.textContent = 'Today: ' + new Date().toLocaleDateString('en-GB', options);
     }
+
+    // Sidebar Toggle Logic
+    const sidebarToggleBtn = document.getElementById('sidebar-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    
+    if (sidebarToggleBtn && sidebar) {
+        sidebarToggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+        });
+    }
 });
