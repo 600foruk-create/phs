@@ -136,9 +136,10 @@
                     </div>
                 </div>
 
-                <!-- Charts Section -->
-                <div class="charts-section">
-                    <div class="card full-width">
+                <!-- Dashboard Analytics Grid -->
+                <div class="dashboard-analytics-grid">
+                    <!-- Charts Section -->
+                    <div class="card">
                         <div class="card-header">
                             <h3>Sales Overview</h3>
                             <select class="filter-dropdown">
@@ -150,10 +151,7 @@
                             <span style="color: #888;">[ Line Chart Placeholder ]</span>
                         </div>
                     </div>
-                </div>
 
-                <!-- Bottom Grid -->
-                <div class="bottom-grid">
                     <!-- Top Selling Items -->
                     <div class="card">
                         <div class="card-header">

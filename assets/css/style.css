@@ -326,20 +326,12 @@ body {
     cursor: pointer;
 }
 
-/* Charts Section */
-.charts-section {
-    margin-bottom: 2rem;
-}
-
-.full-width {
-    width: 100%;
-}
-
-/* Bottom Grid */
-.bottom-grid {
+/* Dashboard Analytics Grid */
+.dashboard-analytics-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 /* Top Items List */
@@ -378,8 +370,9 @@ body {
 /* Order Status Pie Chart area */
 .order-status-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
     justify-content: center;
     margin-top: 1rem;
 }
@@ -389,6 +382,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    width: 100%;
+    max-width: 200px;
 }
 
 .status-legend li {
