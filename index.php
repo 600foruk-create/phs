@@ -17,9 +17,9 @@
     <div id="app">
 
         <!-- ========================================== -->
-        <!-- ADMIN DASHBOARD VIEW (Screen 8)            -->
+        <!-- SHARED ADMIN LAYOUT                        -->
         <!-- ========================================== -->
-        <div id="view-admin-dashboard" class="view active admin-layout">
+        <div class="admin-layout">
             
             <!-- Top Header -->
             <header class="app-top-header">
@@ -54,15 +54,15 @@
                 <!-- Sidebar -->
                 <aside class="sidebar">
                     <nav class="sidebar-nav">
-                        <a href="#" class="nav-item active" onclick="switchView('view-admin-dashboard')">
+                        <a href="#" class="nav-item active" onclick="switchView('view-admin-dashboard', this)">
                             <i class="fa-solid fa-gauge"></i> <span>Dashboard</span>
+                        </a>
+                        <a href="#" class="nav-item" onclick="switchView('view-admin-menu', this)">
+                            <i class="fa-solid fa-utensils"></i> <span>Menu</span>
                         </a>
                         <a href="#" class="nav-item">
                             <i class="fa-solid fa-bag-shopping"></i> <span>Orders</span>
                             <span class="nav-badge">3</span>
-                        </a>
-                        <a href="#" class="nav-item">
-                            <i class="fa-solid fa-utensils"></i> <span>Menu</span>
                         </a>
                         <a href="#" class="nav-item">
                             <i class="fa-solid fa-qrcode"></i> <span>Tables & QR</span>
@@ -89,10 +89,13 @@
                     </nav>
                 </aside>
 
-            <!-- Main Content -->
+            <!-- Main Content Container -->
             <main class="main-content">
                 
-                <!-- Header -->
+                <!-- ========================================== -->
+                <!-- DASHBOARD VIEW                             -->
+                <!-- ========================================== -->
+                <div id="view-admin-dashboard" class="view active" style="display:flex; flex-direction:column; gap: 0.75rem;">
                 <header class="top-header">
                     <div class="welcome-text">
                         <p class="welcome-greeting">Welcome Back,</p>
@@ -221,11 +224,128 @@
                         </div>
                     </div>
                 </div>
+                </div> <!-- End Dashboard View -->
+
+                <!-- ========================================== -->
+                <!-- MENU MANAGEMENT VIEW                       -->
+                <!-- ========================================== -->
+                <div id="view-admin-menu" class="view" style="display:none; flex-direction:column; gap: 1rem; width:100%; height: 100%;">
+                    <header class="top-header" style="margin-bottom:0;">
+                        <div class="welcome-text">
+                            <h2 class="welcome-title" style="font-size: 1.4rem;">Menu Management</h2>
+                            <p class="welcome-subtitle">Manage your categories, items, and special offers.</p>
+                        </div>
+                        <button class="btn-primary" onclick="openModal('modal-category')">
+                            <i class="fa-solid fa-plus"></i> Add Category
+                        </button>
+                    </header>
+                    
+                    <div class="menu-layout" style="display: flex; gap: 1.5rem; flex: 1; overflow: hidden;">
+                        <!-- Categories Sidebar (Inner) -->
+                        <div class="categories-list-container card" style="width: 250px; overflow-y: auto; padding: 0;">
+                            <ul id="category-list" class="category-list">
+                                <!-- Loaded via JS -->
+                            </ul>
+                        </div>
+                        
+                        <!-- Items Grid -->
+                        <div class="items-grid-container" style="flex: 1; overflow-y: auto; display:flex; flex-direction:column; gap:1rem;">
+                            <div class="card-header" style="background: white; padding: 1rem 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); display:flex; justify-content:space-between; align-items:center; margin:0;">
+                                <h3 id="current-category-title" style="margin:0;">Select a Category</h3>
+                                <button class="btn-secondary" onclick="openModal('modal-item')" id="btn-add-item" style="display:none;">
+                                    <i class="fa-solid fa-plus"></i> Add Item
+                                </button>
+                            </div>
+                            <div id="menu-items-grid" class="menu-items-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;">
+                                <!-- Items loaded via JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End Menu View -->
+
             </main>
             </div>
         </div>
 
-        <!-- Future views will be added here (e.g., view-customer-menu, view-kitchen) -->
+        <!-- ========================================== -->
+        <!-- MODALS                                     -->
+        <!-- ========================================== -->
+        <div id="modal-category" class="modal-overlay">
+            <div class="modal-content card">
+                <h3 style="margin-bottom: 1rem;">Add Category</h3>
+                <input type="text" id="cat-name" placeholder="Category Name" class="form-input">
+                <div class="modal-actions" style="margin-top: 1.5rem; display:flex; justify-content:flex-end; gap:0.5rem;">
+                    <button onclick="closeModal('modal-category')" class="btn-secondary">Cancel</button>
+                    <button onclick="saveCategory()" class="btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-item" class="modal-overlay">
+            <div class="modal-content card" style="width: 450px;">
+                <h3 id="modal-item-title" style="margin-bottom: 1rem;">Add Menu Item</h3>
+                <form id="form-item" onsubmit="saveItem(event)">
+                    <input type="hidden" id="item-id" name="id">
+                    <input type="hidden" id="item-category-id" name="category_id">
+                    <input type="hidden" name="action" id="item-action" value="add">
+                    
+                    <div class="form-group">
+                        <label>Item Name</label>
+                        <input type="text" id="item-name" name="name" required class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Price (Rs)</label>
+                        <input type="number" id="item-price" name="price" required class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Short Description (Optional)</label>
+                        <textarea id="item-desc" name="short_description" class="form-input" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Image (Optional)</label>
+                        <input type="file" id="item-image" name="image" accept="image/*" class="form-input">
+                    </div>
+                    
+                    <div class="modal-actions" style="margin-top: 1.5rem; display:flex; justify-content:flex-end; gap:0.5rem;">
+                        <button type="button" onclick="closeModal('modal-item')" class="btn-secondary">Cancel</button>
+                        <button type="submit" class="btn-primary">Save Item</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="modal-offer" class="modal-overlay">
+            <div class="modal-content card" style="width: 400px;">
+                <h3 style="margin-bottom: 1rem;">Set Special Offer</h3>
+                <form id="form-offer" onsubmit="saveOffer(event)">
+                    <input type="hidden" id="offer-item-id" name="id">
+                    <input type="hidden" name="action" value="set_offer">
+                    
+                    <div class="form-group">
+                        <label>Discount Price (Rs) (Leave blank to remove)</label>
+                        <input type="number" id="offer-price" name="offer_price" class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Start Date/Time</label>
+                        <input type="datetime-local" id="offer-start" name="offer_start" class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>End Date/Time</label>
+                        <input type="datetime-local" id="offer-end" name="offer_end" class="form-input">
+                    </div>
+                    
+                    <div class="modal-actions" style="margin-top: 1.5rem; display:flex; justify-content:flex-end; gap:0.5rem;">
+                        <button type="button" onclick="closeModal('modal-offer')" class="btn-secondary">Cancel</button>
+                        <button type="submit" class="btn-primary">Save Offer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
     </div>
 

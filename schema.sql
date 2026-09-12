@@ -50,8 +50,12 @@ CREATE TABLE `menu_items` (
   `category_id` int(11) NOT NULL,
   `name` varchar(150) NOT NULL,
   `price` decimal(10,2) NOT NULL,
+  `short_description` varchar(255) DEFAULT NULL,
   `status` enum('Active','Inactive') NOT NULL DEFAULT 'Active',
   `image_url` varchar(255) DEFAULT NULL,
+  `offer_price` decimal(10,2) DEFAULT NULL,
+  `offer_start` datetime DEFAULT NULL,
+  `offer_end` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
