@@ -2,7 +2,7 @@
 // api/db.php
 // Database connection configuration for Hostinger
 
-$host = 'localhost'; // Usually 'localhost' on Hostinger shared hosting
+$host = '127.0.0.1'; // Changed from localhost to avoid socket issues
 $dbname = 'u245697138_ths123';
 $username = 'u245697138_ths123';
 $password = 'Naimat@.123';
