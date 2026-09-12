@@ -68,8 +68,11 @@ function loadMenuData() {
         .then(data => {
             if (data.status === 'success') {
                 renderCategories(data.data);
+            } else {
+                console.error("Categories fetch error:", data.message);
+                // alert(data.message);
             }
-        });
+        }).catch(err => console.error(err));
 
     // Fetch Items
     fetch('api/menu_items.php')
@@ -80,8 +83,10 @@ function loadMenuData() {
                 if (currentCategoryId) {
                     renderItems(currentCategoryId);
                 }
+            } else {
+                console.error("Menu items fetch error:", data.message);
             }
-        });
+        }).catch(err => console.error(err));
 }
 
 function renderCategories(categories) {
