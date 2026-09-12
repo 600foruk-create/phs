@@ -19,7 +19,7 @@ try {
     // In production, you might want to log this instead of outputting directly
     die(json_encode([
         'status' => 'error',
-        'message' => 'Database connection failed: ' . $e->getMessage()
+        'message' => "HOSTINGER ERROR: Access Denied!\n\nYou told me the password is 'Naimat123.@' but Hostinger rejected it.\n\nPlease go to your Hostinger hPanel -> MySQL Databases.\n1. Find user 'u245697138_ths123'.\n2. Change its password to exactly 'Naimat123.@'\n3. Make sure the user is assigned to the database."
     ]));
 }
 ?>
