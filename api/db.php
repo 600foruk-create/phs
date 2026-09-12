@@ -5,7 +5,7 @@
 $host = '127.0.0.1'; // Changed from localhost to avoid socket issues
 $dbname = 'u245697138_ths123';
 $username = 'u245697138_ths123';
-$password = 'Naimat@.123';
+$password = 'Naimat123.@';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
